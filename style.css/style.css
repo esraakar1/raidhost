@@ -1,0 +1,733 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(Poppins);
+    scroll-behavior: smooth;
+    text-transform: capitalize;
+}
+
+body{
+    background-color: var(--container-color);
+    color: var(--text-color);
+    font-family: var(--poppins-font-family);
+}
+
+:root{
+    --poppins-font-family: "Poppins", sans-serif;
+
+    --main-color: #171b44;
+    --body-alter-color: #232b85;
+    --main-color: #ff4d55;
+    --hover-color: #f8646c;
+    --container-color: #1d2352;
+    --text-color: #fbfeff;
+    --text-alter-color: #08d2d4;
+}
+
+section{
+    padding: 4rem 0rem 3rem;
+}
+
+img{
+    width: 100%;
+}
+
+.container{
+    max-width: 1060px;
+    margin: auto;
+    width: 100%;
+    
+}
+
+.header{
+    position: fixed;
+    width: 100%;
+    background-color: var(--body-alter-color);
+    z-index: 10000;
+    font-family: var(--poppins-font-family);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 25px;
+    margin: auto;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.logo span{
+    color: var(--main-color);
+}
+
+.navbar {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.navbar a{
+    color: var(--text-color);
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: var(--main-color);
+    bottom: -4px;
+    left: 0;
+    transition: all 0.4s linear;
+  }
+  .navbar a:hover::after {
+    width: 100%;
+}
+
+.login-btn{
+    background-color: var(--main-color);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 8px 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    border: none;
+    justify-content: center;
+}
+
+.login-btn .bx{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.login-btn:hover{
+    background-color: var(--hover-color);
+}
+
+.menu-icon{
+    display: none;
+}
+
+.menu-icon .bx{
+    font-size: 24px;
+}
+
+/* home */
+.home-wrapper {
+    min-height: 640px;
+    position: relative;
+  }
+  .home-wrapper img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+  }
+  .home-overlay {
+    position: absolute;
+    background: linear-gradient(
+      74deg,
+      rgb(23, 27, 68, 80%) 50%,
+      rgb(23, 27, 68, 14%)
+    );
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+  .home-text {
+    position: absolute;
+    z-index: 200;
+    top: 250px;
+    left: 100px;
+  }
+  .home-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .home-title span {
+    color: var(--main-color);
+  }
+  .home-title::after,
+  .faq-title::after {
+    content: "";
+    position: absolute;
+    width: 44px;
+    height: 3px;
+    background: var(--main-color);
+    left: 0;
+    top: -10px;
+  }
+  .home-description {
+    max-width: 450px;
+    font-size: 14px;
+    margin: 0.2rem 0 1rem;
+  }
+  .btn {
+    background: var(--main-color);
+    padding: 10px 16px;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: var(--hover-color);
+  }
+  
+  /* services */
+
+  .heading{
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+
+.heading::after{
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 44px;
+    height: 3px;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.services-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    gap: 1.5rem;
+}
+
+.ser-box{
+    padding: 15px;
+    background-color: var(--body-alter-color);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.ser-box:hover{
+    transform: scale(1.05);
+}
+
+.ser-box-title{
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.3rem 0 0.5rem;
+    text-transform: uppercase;
+}
+
+.ser-box .bx{
+    border-radius: 0.3rem;
+    padding: 10px;
+    color: var(--text-color);
+   font-size: 1.7rem;
+   background-color: var(--main-color);
+}
+
+.ser-box p{
+    font-size: 14.5px;
+}
+
+
+/* games */
+
+.games-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    gap: 2rem;
+}
+
+.game-box{
+    background-color: var(--body-alter-color);
+}
+
+.game-box-img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    transform: scale(1.04);
+    object-position: center;
+    box-shadow: 0px 10px 10px rgb(23, 27, 68, 80%);
+}
+
+.game-text{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.game-box-title{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.game-price{
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.game-price span{
+    color: var(--text-alter-color);
+}
+
+.game-text a{
+    color: var(--main-color);
+    padding: 8px;
+}
+
+/* faq */
+
+.faq{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;   
+    gap: 2rem; 
+}
+
+.faq-text{
+    flex: 1 1 17rem;
+}
+
+.faq-img{
+   flex: 1 1 17rem;
+}
+
+.faq-title{
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.faq-text p{
+    margin: 0.5rem 0 1.5rem;
+    font-size: 14px;
+    text-align: justify;
+}
+
+/* accordion */
+
+.faq-accordion{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.accordion-text p{
+   margin: 20px 0; 
+   font-size: 15px;
+   font-weight: 200;
+}
+
+.accordion-text h2{
+   position: relative;
+   font-size: 30px;
+   font-weight: 600;
+}
+
+.accordion-text h2::after{
+    content: "";
+    position: absolute;
+    width: 44px;
+    height: 3px;
+    display: flex;
+    background-color: var(--main-color);
+    top: -15px;
+}
+
+.accordion-container{
+    flex: 1 1 17rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.accordion-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--body-alter-color);
+    padding: 20px;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.accordion-title{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.accordion-header i{
+    font-size: 20px;
+}
+
+/* control */
+
+.control{
+    background-color: var(--body-alter-color);
+}
+
+.control-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 90px;
+}
+
+.control-images{
+    flex: 1 1 17rem;
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+    object-position: center;
+}
+
+.control-text p{
+    padding: 25px 0;
+    font-size: 15px;
+}
+
+.control-text h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.spec-box{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.spec-box .bx{
+    color: var(--main-color);
+}
+
+/* footer */
+
+.footer{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 2rem;
+   margin-top: 4rem !important;
+   padding-bottom: 20px;
+}
+
+.footer-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-box h2{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.footer-a{      
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: all 0.3s linear;
+}
+
+.footer-a:hover{
+    color: var(--main-color);
+}
+
+.footer-title{
+    color: var(--main-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.footer-title span{
+    color: var(--text-color);
+}
+
+.social{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.social .bx{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.social .bx:hover{
+    color: var(--main-color);
+}
+
+/* copyright */
+
+.copyright{
+    border-top: 1px solid var(--text-color);
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright p{
+    font-size: 0.8rem;
+}
+
+.payments .bx{
+    font-size: 25px;
+}
+
+/* prices */
+
+.prices {
+    background-image: linear-gradient(
+        rgb(23, 27, 68, 87%) 100%,
+        rgb(23, 27, 68, 87%) 100% ),
+      url(./../img/prices-home.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .prices-text{
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
+  .prices-subtitle{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .prices-title{
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+
+  .prices-description{
+    font-size: 1rem;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .prices-container{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 2rem !important;
+  }
+
+  .price-item{
+    background-color: var(--body-alter-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.4rem;
+    margin-bottom: 5rem;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+
+  .price-item:hover{
+    transform: translateY(-10px);
+  }
+
+  .price-box-img{
+    width: 100px;
+    display: block;
+    position: relative;
+    margin-top: -64px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card-top{
+    margin: 1rem;
+  }
+
+  .price-item-title{
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .card-top p{
+    font-size: 0.95rem;
+    color: #d4d4d4;
+  }
+
+  .price-heading{
+    width: 100%;
+    background-color: var(--main-color);
+    padding: 8px 0;
+  }
+
+  .price-heading h2{
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .price-heading span{
+    font-size: 1rem;
+  }
+
+  .ram-title{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0.8rem 0 1rem;
+  }
+
+  .ram-title span{
+    font-size: 1rem;
+    color: #d4d4d4;
+    font-weight: 500;
+  }
+
+  .plan-btn{
+    background-color: var(--main-color);
+    padding: 8px 24px;
+    color: var(--text-color);
+    white-space: nowrap;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    transition: all 0.4s;
+  }
+
+  .plan-btn:hover{
+    background-color: var(--hover-color);
+  }
+
+
+/* responsive */
+
+@media (max-width: 1050px){
+    .container{
+        margin: 0 auto;
+        width: 92%;
+    }
+}
+
+@media (max-width: 952px){
+    .nav{
+        padding: 14px 0;
+    }
+    .home-wrapper img,
+    .home-overlay{
+        margin-top: -10px;
+    }
+    .logo{
+        padding: 0 20px;
+    }
+    .menu-icon{
+        padding: 0 20px;
+    }
+    .section{
+        padding: 3rem 0rem 2rem;
+    }
+    .navbar{
+        display: none;
+    }
+    .menu-icon{
+        display: inline-block;
+    }
+    .home-text{
+        position: absolute;
+        z-index: 200;
+        top: 250px;
+        left: 20px;
+    }
+    .footer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .prices-text{
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+    .prices-title{
+        padding-top: 2rem;
+        font-weight: 700;
+    }
+    .prices-description{
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+    .game-price{
+        text-align: center;
+    }
+}
+
+@media(max-width: 850px){
+    .prices-container{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media(max-width:750px){
+    .footer{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:540px){
+    .prices-container {
+        grid-template-columns: 1fr;
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
